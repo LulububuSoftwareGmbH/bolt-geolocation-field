@@ -17,13 +17,6 @@
       >
       <label class="custom-control-label" for="{{ id_radio_search }}">Search</label>
     </div>
-    <div class="custom-control custom-radio custom-control-inline geolocation-radio-latlong">
-      <input type="radio" id="{{ id_radio_latlong }}" name="{{ id_radio_name }}"
-             value="latlong" class="custom-control-input"
-        {% if parsed_value.selected == "latlong" %} checked {% endif %}
-      >
-      <label class="custom-control-label" for="{{ id_radio_latlong }}">Latitude & Longitude</label>
-    </div>
 
     {% set id_input_search = id ~ '_input_search' %}
     {% set id_input_lat = id ~ '_input_lat' %}
@@ -34,18 +27,6 @@
         <label for="{{ id_input_search }}">Search</label>
         <input type="text" class="form-control" id="{{ id_input_search }}"
                placeholder="Search" value="{{ parsed_value.search|default() }}"
-        >
-      </div>
-      <div class="col form-group geolocation-field-lat{% if parsed_value.selected == "search" or parsed_value.selected is null %} d-none {% endif %}">
-        <label for="{{ id_input_lat }}">Latitude</label>
-        <input type="text" class="form-control" id="{{ id_input_lat }}"
-               placeholder="Latitude" value="{{ parsed_value.lat|default() }}"
-        >
-      </div>
-      <div class="col form-group geolocation-field-long{% if parsed_value.selected == "search" or parsed_value.selected is null %} d-none {% endif %}">
-        <label for="{{ id_input_long }}">Longitude</label>
-        <input type="text" class="form-control" id="{{ id_input_long }}"
-               placeholder="Longitude" value="{{ parsed_value.long|default() }}"
         >
       </div>
     </div>
